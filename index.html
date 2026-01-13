@@ -41,16 +41,17 @@ section{padding-block:3.5rem}
 .hero h1{font-size:clamp(2.5rem,6vw,4rem);font-weight:300;margin-bottom:1.25rem}
 .hero__subtitle{font-size:1.125rem;color:var(--muted);line-height:1.7;margin-bottom:2.5rem;max-width:750px;margin-inline:auto}
 .hero__cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.testimonials{padding-block:2rem}
-.carousel{position:relative;margin-bottom:1rem}
-.carousel__slides{position:relative;min-height:140px}
-.carousel__slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .45s}
+.testimonials{padding-block:2.5rem}
+.carousel{position:relative;max-width:800px;margin-inline:auto}
+.carousel__slides{position:relative;min-height:100px}
+.carousel__slide{position:absolute;top:0;left:0;right:0;opacity:0;pointer-events:none;transition:opacity .4s}
 .carousel__slide.is-active{opacity:1;pointer-events:auto;position:relative}
-.quote{background:rgba(255,255,255,.08);padding:1rem;border-left:3px solid var(--burg);font:.875rem/1.5 inherit}
-.quote cite{display:block;margin-top:.5rem;font:600 .75rem/1 inherit;color:rgba(255,255,255,.8)}
-.carousel__dots{display:flex;justify-content:center;gap:.5rem;margin-top:.75rem}
-.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);border:0;padding:0;cursor:pointer;transition:all 250ms}
-.dot:hover{background:rgba(255,255,255,.5);transform:scale(1.2)}
+.quote{background:rgba(255,255,255,.1);padding:1.25rem 1.5rem;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.quote p{font:.875rem/1.55 inherit;color:#fff;margin:0}
+.quote cite{display:block;margin-top:.625rem;font:600 .75rem/1 inherit;color:rgba(255,255,255,.7)}
+.carousel__dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem}
+.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);border:0;padding:0;cursor:pointer;transition:all 200ms}
+.dot:hover{background:rgba(255,255,255,.5)}
 .dot[aria-current="true"]{background:#fff;width:24px;border-radius:4px}
 .grid{display:grid;gap:1.5rem}
 .grid--3col{grid-template-columns:repeat(3,1fr)}
@@ -84,17 +85,20 @@ section{padding-block:3.5rem}
 .cta-banner p{color:rgba(255,255,255,.95);font-size:.9375rem;margin:0}
 .cta-banner__btn{background:#fff;color:var(--burg);padding:.875rem 2rem;border-radius:6px;font-weight:600;font-size:1rem;white-space:nowrap;transition:all 200ms;border:2px solid #fff}
 .cta-banner:hover .cta-banner__btn{background:rgba(255,255,255,.95);transform:translateY(-1px)}
-details.leadership-section{background:#fff;border:2px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:2rem}
-details.leadership-section>summary{list-style:none;cursor:pointer;padding:1.5rem 4rem 1.5rem 1.5rem;position:relative;background:linear-gradient(90deg,rgba(44,82,130,.03),transparent);border-left:4px solid var(--blue);transition:all 250ms}
+details.leadership-section{background:#fff;border:2px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:2rem;position:relative}
+details.leadership-section::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--blue)}
+details.leadership-section>summary{list-style:none;cursor:pointer;padding:1.5rem 4rem 1.5rem 1.5rem;position:relative;background:linear-gradient(90deg,rgba(44,82,130,.03),transparent);transition:all 250ms}
 details.leadership-section>summary::-webkit-details-marker{display:none}
-details.leadership-section>summary:hover{background:linear-gradient(90deg,rgba(44,82,130,.08),transparent);border-left-color:var(--navy)}
+details.leadership-section>summary:hover{background:linear-gradient(90deg,rgba(44,82,130,.08),transparent)}
 details.leadership-section>summary::after{content:"+";position:absolute;right:1.5rem;top:50%;transform:translateY(-50%);font:2rem/1 inherit;color:var(--blue);transition:transform 250ms}
 details.leadership-section[open]>summary::after{transform:translateY(-50%) rotate(45deg)}
 .leadership__title{display:block;font:600 clamp(1.5rem,4vw,2rem)/1.2 inherit;margin-bottom:.5rem;color:var(--navy)}
 .leadership__desc{display:block;color:var(--muted);font-size:.95rem;line-height:1.6}
 .ways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
-.way-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1.25rem;transition:all 200ms;text-decoration:none;display:block;border-left:3px solid var(--burg);box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.way-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:1.25rem;transition:all 200ms;text-decoration:none;display:block;box-shadow:0 2px 8px rgba(0,0,0,.06);position:relative;overflow:hidden}
+.way-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--burg);opacity:0;transition:opacity 200ms}
 .way-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.way-card:hover::before{opacity:1}
 .way-card h3{font-size:1rem;margin-bottom:.5rem;color:var(--navy);font-weight:600}
 .way-card p{color:var(--muted);line-height:1.5;font-size:.8125rem}
 .contact{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:#fff;padding:2rem 2.5rem;border-radius:8px;margin-top:2rem;border:1px solid rgba(255,255,255,.1)}
@@ -119,7 +123,7 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 .skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;background:#fff;border:2px solid var(--line);padding:.5rem 1rem;border-radius:6px;z-index:999}
 @media(max-width:900px){.grid--3col{grid-template-columns:1fr}.tier-header{grid-template-columns:1.5fr repeat(4,1fr)}.benefit-row{grid-template-columns:1.5fr repeat(4,1fr)}.ways-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.ways-grid{grid-template-columns:1fr}}
-@media(max-width:600px){section{padding-block:3rem}.hero{padding-block:3rem 2.5rem}.hero__cta{flex-direction:column}.hero__cta .btn{width:100%}details.leadership-section>summary{padding:1rem 3rem 1rem 1rem}details.leadership-section>summary::after{right:1rem;font-size:1.5rem}.tier-header{grid-template-columns:1fr repeat(4,.8fr);gap:.25rem}.benefit-row{grid-template-columns:1fr repeat(4,.8fr);gap:.25rem}}
+@media(max-width:600px){section{padding-block:3rem}.hero{padding-block:3rem 2.5rem}.hero__cta{flex-direction:column}.hero__cta .btn{width:100%}.testimonials{padding-block:2rem}.carousel__slides{min-height:110px}.quote{padding:1rem 1.25rem}.quote p{font-size:.8125rem}.carousel__dots{margin-top:1rem}details.leadership-section>summary{padding:1rem 3rem 1rem 1rem}details.leadership-section>summary::after{right:1rem;font-size:1.5rem}.tier-header{grid-template-columns:1fr repeat(4,.8fr);gap:.25rem}.benefit-row{grid-template-columns:1fr repeat(4,.8fr);gap:.25rem}}
 </style>
 </head>
 <body>
@@ -143,13 +147,13 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <div class="section-header section-header--white">
 <h2>What Our Members Say</h2>
 </div>
-<div class="carousel" aria-label="Member testimonials">
+<div class="carousel" aria-label="Member testimonials" aria-roledescription="carousel">
 <div class="carousel__slides" aria-live="polite">
-<blockquote class="quote carousel__slide is-active" data-slide="0">"XPN is my singular lifeline to meaningful new music."<cite>— Eliot, Chester NJ</cite></blockquote>
-<blockquote class="quote carousel__slide" data-slide="1">"The human touch in curating the music and all of the shows is unbeatable."<cite>— Emily, Doylestown PA</cite></blockquote>
-<blockquote class="quote carousel__slide" data-slide="2">"I don't have a ton of expendable monthly money, but I utilize XPN so much on my daily commute, and so much of my early music listening development came from the station. I wanted to show my gratitude by investing in a membership."<cite>— PJ, Philadelphia</cite></blockquote>
-<blockquote class="quote carousel__slide" data-slide="3">"I LIKE THE CUT OF YOUR JIB, WXPN. There is no other station like WXPN. Period. You have stayed true to your mission and this listener is incredibly grateful to you and the joy you bring."<cite>— Joan, West Chester PA</cite></blockquote>
-<blockquote class="quote carousel__slide" data-slide="4">"I love XPN because it's real. The whole team of DJs makes me feel like I'm listening to a group of friends who know music inside and out and want to share their favorites. There's no hype, no forced energy, just people who genuinely care about what they're playing."<cite>— Robert, Lancaster PA</cite></blockquote>
+<blockquote class="quote carousel__slide is-active" data-slide="0"><p>"XPN is my singular lifeline to meaningful new music."</p><cite>Eliot, Chester NJ</cite></blockquote>
+<blockquote class="quote carousel__slide" data-slide="1"><p>"The human touch in curating the music and all of the shows is unbeatable."</p><cite>Emily, Doylestown PA</cite></blockquote>
+<blockquote class="quote carousel__slide" data-slide="2"><p>"I don't have a ton of expendable monthly money, but I utilize XPN so much on my daily commute, and so much of my early music listening development came from the station. I wanted to show my gratitude by investing in a membership."</p><cite>— PJ, Philadelphia</cite></blockquote>
+<blockquote class="quote carousel__slide" data-slide="3"><p>"I LIKE THE CUT OF YOUR JIB, WXPN. There is no other station like WXPN. Period. You have stayed true to your mission and this listener is incredibly grateful to you and the joy you bring."</p><cite>— Joan, West Chester PA</cite></blockquote>
+<blockquote class="quote carousel__slide" data-slide="4"><p>"I love XPN because it's real. The whole team of DJs makes me feel like I'm listening to a group of friends who know music inside and out and want to share their favorites. There's no hype, no forced energy, just people who genuinely care about what they're playing."</p><cite>— Robert, Lancaster PA</cite></blockquote>
 </div>
 <div class="carousel__dots" role="tablist" aria-label="Testimonial navigation">
 <button class="dot" data-dot="0" aria-label="Show testimonial 1" aria-current="true"></button>
@@ -157,7 +161,6 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <button class="dot" data-dot="2" aria-label="Show testimonial 3"></button>
 <button class="dot" data-dot="3" aria-label="Show testimonial 4"></button>
 <button class="dot" data-dot="4" aria-label="Show testimonial 5"></button>
-</div>
 </div>
 </div>
 </section>
