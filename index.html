@@ -21,6 +21,7 @@ p,ul{margin:0;padding:0;list-style:none}
 .container{max-width:1200px;margin-inline:auto;padding-inline:1.5rem}
 .container--wide{max-width:1320px}
 section{padding-block:3.5rem}
+.section--reduced-top{padding-top:.5rem}
 .bg-wash{background:var(--wash);border-block:1px solid var(--line)}
 .bg-blue{background:var(--blue);color:#fff}
 .section-header{text-align:center;max-width:640px;margin:0 auto 2.5rem}
@@ -43,10 +44,10 @@ section{padding-block:3.5rem}
 .hero__cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .testimonials{padding-block:2.5rem}
 .carousel{position:relative;max-width:800px;margin-inline:auto}
-.carousel__slides{position:relative;min-height:100px}
+.carousel__slides{position:relative;min-height:180px}
 .carousel__slide{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .4s}
 .carousel__slide.is-active{opacity:1;pointer-events:auto;position:relative}
-.quote{background:rgba(255,255,255,.1);padding:1.25rem 1.5rem;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+.quote{background:rgba(255,255,255,.1);padding:1.25rem 1.5rem;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,.15);min-height:140px;display:flex;flex-direction:column;justify-content:center}
 .quote p{font:.875rem/1.55 inherit;color:#fff;margin:0}
 .quote cite{display:block;margin-top:.625rem;font:600 .75rem/1 inherit;color:rgba(255,255,255,.7)}
 .carousel__dots{display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem}
@@ -98,6 +99,14 @@ details.leadership-section[open]{box-shadow:0 4px 20px rgba(44,82,130,.2)}
 .way-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
 .way-card h3{font-size:1rem;margin-bottom:.5rem;color:var(--navy);font-weight:600}
 .way-card p{color:var(--muted);line-height:1.5;font-size:.8125rem}
+.vinyl-club-card{position:relative;overflow:hidden;background:#fe6260;border-radius:12px;padding:2rem 2rem;text-decoration:none;display:block;transition:all 300ms;box-shadow:0 6px 20px rgba(254,98,96,.3);border:2px solid #fe6260;margin-top:1.5rem}
+.vinyl-club-card::before{content:'';position:absolute;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle at center,transparent 30%,rgba(252,215,35,.25) 30%,rgba(252,215,35,.25) 31%,transparent 31%,transparent 48%,rgba(252,215,35,.15) 48%,rgba(252,215,35,.15) 49%,transparent 49%);top:-50px;right:-50px;pointer-events:none;opacity:.8}
+.vinyl-club-card::after{content:'';position:absolute;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at center,transparent 30%,rgba(252,215,35,.3) 30%,rgba(252,215,35,.3) 31%,transparent 31%,transparent 48%,rgba(252,215,35,.2) 48%,rgba(252,215,35,.2) 49%,transparent 49%);bottom:-40px;left:-40px;pointer-events:none;opacity:.7}
+.vinyl-club-card:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(254,98,96,.4);border-color:#fcd723}
+.vinyl-club-card__content{position:relative;z-index:1;text-align:center;max-width:600px;margin:0 auto}
+.vinyl-club-card h2{color:#fff;font-size:1.75rem;font-weight:600;margin-bottom:.5rem;text-shadow:0 2px 6px rgba(0,0,0,.2)}
+.vinyl-club-card p{color:rgba(255,255,255,.95);font-size:1rem;line-height:1.6;margin:0;text-shadow:0 1px 3px rgba(0,0,0,.15)}
+.vinyl-club-card__badge{display:inline-block;background:rgba(252,215,35,.25);color:#fff;padding:.4rem .875rem;border-radius:20px;font-size:.8125rem;font-weight:600;margin-top:1rem;box-shadow:0 2px 8px rgba(0,0,0,.2);border:1px solid rgba(252,215,35,.4)}
 .contact{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);color:#fff;padding:2rem 2.5rem;border-radius:8px;margin-top:2rem;border:1px solid rgba(255,255,255,.1)}
 .contact h3{margin-bottom:.75rem;font-size:1.375rem;font-weight:600}
 .contact p{color:rgba(255,255,255,.9);margin-bottom:1.5rem;font-size:.9375rem;line-height:1.5}
@@ -183,12 +192,22 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <div class="benefit-row"><div class="benefit-name">Monthly curated playlists from the hosts</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">Premium XPN "Thank You" gift</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">One pair of Complimentary 3-Day XPoNential Festival Passes</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
-<div class="benefit-row"><div class="benefit-name"><strong>Vinyl Club:</strong> 4 hand-picked records per year by Mike Vasilikos</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">Tour the XPN studio with up to 6 friends</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div></div>
 </div>
 </div>
 </section>
-<section class="bg-wash">
+<section class="bg-wash section--reduced-top">
+<div class="container">
+<a href="https://your-salesforce-donation-page-url.com" class="vinyl-club-card">
+<div class="vinyl-club-card__content">
+<h2>Vinyl Club</h2>
+<p>Join the exclusive Vinyl Club at the Platinum level and receive 4 hand-picked records per year curated by Mike Vasilikos</p>
+<span class="vinyl-club-card__badge">Platinum Members Only • $75+/month</span>
+</div>
+</a>
+</div>
+</section>
+<section>
 <div class="container container--wide">
 <details class="leadership-section">
 <summary>
@@ -206,7 +225,6 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <div class="benefit-row"><div class="benefit-name">All Platinum Member Benefits</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">Monthly Donor Newsletter</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">VIP Mezzanine Seating for Free At Noon</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
-<div class="benefit-row"><div class="benefit-name">Discounted NonComm Tickets</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">Invites to exclusive events, concerts, or World Cafe sessions</div><div class="benefit-check">4</div><div class="benefit-check">8</div><div class="benefit-check">All</div><div class="benefit-check">All</div></div>
 <div class="benefit-row"><div class="benefit-name">"WXPN Welcomes" concert tickets (when available)</div><div class="benefit-check">2</div><div class="benefit-check">3</div><div class="benefit-check">6</div><div class="benefit-check">✓</div></div>
 <div class="benefit-row"><div class="benefit-name">Invitation to The State of the Station Event</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div><div class="benefit-check">✓</div></div>
@@ -215,16 +233,9 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <div class="benefit-row"><div class="benefit-name">Private lunch with Station GM or hosts (you + 3 friends)</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check empty">—</div><div class="benefit-check">✓</div></div>
 </div>
 </details>
-<a href="https://your-salesforce-donation-page-url.com" class="cta-banner">
-<div class="cta-banner__text">
-<h3>Ready to Become a Member?</h3>
-<p>Choose your amount and join today.</p>
-</div>
-<div class="cta-banner__btn">Join Now</div>
-</a>
 </div>
 </section>
-<section id="ways-to-give">
+<section id="ways-to-give" class="section--reduced-top">
 <div class="container">
 <div class="section-header">
 <h2>Other Ways to Give</h2>
@@ -236,7 +247,7 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <a href="#" class="way-card"><h3>IRA Gifts</h3><p>If you're 70½ or older, direct a Qualified Charitable Distribution (QCD) from your IRA to WXPN—it satisfies your RMD and isn't counted as taxable income.</p></a>
 <a href="#" class="way-card"><h3>Charitable Gift Annuity</h3><p>Contribute cash or securities and receive fixed income for life. After your lifetime, remaining funds support WXPN—a win-win for you and the station.</p></a>
 <a href="#" class="way-card"><h3>Trusts and Real Estate</h3><p>Gifts of appreciated property, charitable remainder trusts, or real estate can provide tax benefits and lasting support for WXPN while preserving your legacy.</p></a>
-<a href="#" class="way-card"><h3>Give by Check</h3><p>Make checks payable to <strong>WXPN</strong> and mail to: <strong>WXPN Member Services, 3905 Spruce Street, Philadelphia, PA 19104</strong>.</p></a>
+<a href="#" class="way-card"><h3>Give by Check</h3><p>Make your gift by check, payable to WXPN and send directly to the address below:<br><strong>WXPN | Attention Kate Brett<br>PO Box 8419<br>Philadelphia, PA 19101-8419</strong></p></a>
 </div>
 </div>
 </section>
@@ -268,12 +279,12 @@ details.faq__item[open]>summary::after{transform:rotate(45deg)}
 <h2>Frequently Asked Questions</h2>
 </div>
 <div class="faq">
-<details class="faq__item"><summary>What payment methods do you accept?</summary><div class="faq__answer"><p>We accept all major credit cards (Visa, Mastercard, American Express, Discover), PayPal, and checks. For checks, please mail to WXPN Member Services, 3905 Spruce Street, Philadelphia, PA 19104.</p></div></details>
-<details class="faq__item"><summary>What's the difference between one-time and sustaining membership?</summary><div class="faq__answer"><p>A sustaining membership is an ongoing monthly or annual gift that renews automatically, providing dependable funding for WXPN. One-time donations are single contributions that you'll be asked to renew later. Sustainers are especially valuable because they provide the most reliable support.</p></div></details>
-<details class="faq__item"><summary>How do I change or cancel my membership?</summary><div class="faq__answer"><p>To update your payment information or cancel your sustaining membership, please contact Member Services at <a href="mailto:members@xpn.org">members@xpn.org</a> or 215-898-6677. We're here Monday–Friday, 9am–5pm ET. You can cancel your sustaining gift at any time.</p></div></details>
-<details class="faq__item"><summary>When will I receive my thank-you gift?</summary><div class="faq__answer"><p>Thank-you gifts and membership premiums typically arrive within 4–8 weeks of your donation. If you have questions about your gift status, please contact Member Services.</p></div></details>
-<details class="faq__item"><summary>Is my donation tax-deductible?</summary><div class="faq__answer"><p>Yes! WXPN is a 501(c)(3) nonprofit organization under the University of Pennsylvania. Your donation is tax-deductible to the fullest extent allowed by law. We'll send you an annual tax receipt for your records.</p></div></details>
-<details class="faq__item"><summary>Does my membership ever expire?</summary><div class="faq__answer"><p>Annual memberships need to be renewed each year to maintain your benefits. Sustaining members remain active until they choose to cancel. We'll send you renewal reminders before your annual membership expires.</p></div></details>
+<details class="faq__item"><summary>How can I change my membership, contact info, or the amount I'm donating?</summary><div class="faq__answer"><p>You can update your personal information or donation by contacting <a href="mailto:memberservices@xpn.org">WXPN Member Services</a> at memberservices@xpn.org or 1-800-565-9976. Messages are returned within 3 business days.</p></div></details>
+<details class="faq__item"><summary>How can I cancel my sustaining membership?</summary><div class="faq__answer"><p>You can stop your sustaining membership at any time by calling WXPN Member Services at 1-800-565-9976 or <a href="mailto:memberservices@xpn.org">by emailing us</a> to let us know you'd like to cancel. NOTE: If you donated for a specific premium item such as concert tickets, or XPoNential Music Festival tickets, please fulfill at least 12 months of your sustaining membership, or you may be requested to fulfill the cost of the event ticket. WXPN is a non-profit, and counts on member support to offer our excellent events!</p></div></details>
+<details class="faq__item"><summary>How can I purchase WXPN merchandise (t-shirts, CDs, mugs, etc.)?</summary><div class="faq__answer"><p>WXPN merchandise is usually only available as a gift to members to thank them for making all the WXPN music discovery and community service possible. Because we are a nonprofit, it is not fiscally responsible for us to sell merchandise. Current members can make an additional donation and receive additional thank-you gifts. If you are not a current member, please join us today and select your gift!</p></div></details>
+<details class="faq__item"><summary>When will I receive the thank-you gift(s) I selected?</summary><div class="faq__answer"><p>Thank-you gifts are mailed based on their availability and receipt of your payment. Expect your gift(s) to be mailed within 4-8 weeks of your full payment or first installment. Due to packaging and availability, some gifts are mailed separately, and may arrive as far apart as 10 days. If you do not receive all of your gifts by 8 weeks after we received your payment, please contact WXPN Member Services at 1-800-565-9976 or <a href="mailto:memberservices@xpn.org">email us</a>.</p></div></details>
+<details class="faq__item"><summary>Is my donation to WXPN tax-deductible? When will I receive my tax letter?</summary><div class="faq__answer"><p>Yes, as part of the University of Pennsylvania, WXPN is legally designated as a nonprofit, so donations are tax-deductible. Tax letters are emailed to all donors in January every year. If you need a copy of your tax letter mailed to you, please contact WXPN Member Services at 1-800-565-9976 or <a href="mailto:memberservices@xpn.org">email us</a>. NOTE: Your tax-deductible amount may be impacted by the total value of thank-you gifts and benefits you receive. Additionally, donations directed from Donor Advised Funds (DAFs) are not eligible for tax deduction when the donation is dispersed, because they receive a tax deduction when the funds are put into the DAF.</p></div></details>
+<details class="faq__item"><summary>How can I donate if I live outside of the United States?</summary><div class="faq__answer"><p>For security reasons WXPN donation forms require a United States address for payment verification. Interested donors outside of the United States can donate to WXPN via the <a href="https://giving.apps.upenn.edu/fund?program=XPN&fund=340220">University of Pennsylvania's Giving Portal</a>. When donating via the University of Pennsylvania's Giving Portal, WXPN will receive your donation from the University of Pennsylvania at the end of the month in which the donation is made.</p></div></details>
 </div>
 </div>
 </section>
